@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.app-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-weight: lighter;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .header {
+    position: fixed;
+    top: 0;
+    width: 250px;
+    left: 0;
+    right: 0;
+    background-color: rgb(56, 53, 48);
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+    font-family: sans-serif;
+    
   }
-  to {
-    transform: rotate(360deg);
+  
+  .sidebar {
+    width: 250px;
+    background-color: rgba(37, 28, 28, 0.849);
+    color: #ffffffe8;
+    padding: 9px;
+    overflow-y: auto;
+    height: 100vh;
+    padding-top: 130px;
+    z-index: 1;
+    border-right: 1px solid #e0e0e0;
+    
   }
-}
+  
+  .sidebar-section {
+    margin-bottom: 1px;
+    padding: 10px;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+  }
+  
+  .sidebar-section.hovered {
+    background-color: #ffffff0e;
+    color: #000;
+  }
+  
+  .sidebar-section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .content {
+    flex: 1;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(0.5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .content p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .item-details {
+    position: fixed; /* Change the position to fixed */
+    top: 20px; /* Adjust the top position as needed */
+    left: 300px; /* Adjust the left position as needed */
+    background-color: #ffffff00;
+    color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    z-index: 1; /* Add a higher z-index to ensure the item-details container is on top */
+  }
+
+  .item-details img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
